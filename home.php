@@ -10,6 +10,30 @@ if (isset($_SESSION['id']) && isset($_SESSION['student_id'])) {
 	<title>HOME</title>
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="home.css">
+    <script type="text/javascript">
+        function rset(f){
+        f.submit();
+        f.reset();
+        }
+    </script>
+    <script>
+		// This is JavaScript function that validate HTML form data entry
+		function checkform() {
+		if(document.forms["module-form"]["module_cd"].value == "") {
+		alert( "Please select module code!");
+		return false;
+		}
+		if(document.forms["module-form"]["credit"].value == "") {
+		alert( "Please enter credit!");
+		return false;
+		}
+        if(document.forms["module-form"]["mark"].value == "") {
+		alert( "Please enter mark!");
+		return false;
+		}
+		return( true );
+		}
+	</script>
 </head>
 <body>
      <div class="container">
@@ -20,22 +44,35 @@ if (isset($_SESSION['id']) && isset($_SESSION['student_id'])) {
      </div>
     <div class="wrapper">
 
-    <form style="display:inline-flex" action="senddata.php" method="post">
-        <div class="col-auto">       
-            <input type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="module_cd" placeholder="Module Code">   
+    <form style="display:inline-flex" action="senddata.php" method="post" name="module-form" onsubmit="return checkform()">
+        <div class="col-auto"> 
+            <p>Module Code: <br>  
+            <select name="module_cd">
+                <option></option>
+                <option>COMP7001</option>
+                <option>COMP7002</option>
+                <option>TECH7005</option>
+                <option>DALT7002</option>
+                <option>DALT7011</option>
+                <option>SOFT7003</option>
+                <option>TECH7004</option>
+                <option>TECH7009</option>
+            </select></p>
+        </div>
+        
+        <div class="col-auto">
+            Credit: <br> <input type="number" name="credit" >
         </div>
         <div class="col-auto">
-            <input type="number" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="credit" placeholder="Credit">   
+            Mark: <br> <input type="number" name="mark" >
         </div>
         <div class="col-auto">
-            <input type="number" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="mark" placeholder="Mark">   
-        </div>
-        <div class="col-auto">
-            <input type="submit" name="submit" value="Submit" class="btn btn-success">   
+            <br>
+            <input type="submit" name="submit" value="Submit" class="btn btn-success btn-sm" onclick="rset(this.form)">   
         </div>
     </form>
 
-        <?php include('module_tables.php'); ?>
+        <?php include('tables.php'); ?>
 
     </div>
 

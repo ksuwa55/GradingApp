@@ -95,12 +95,11 @@ table th{
 
 
 .table_container{
-   margin-top: 2em;
+   margin-top: 1.5em;
 }
 
 .tables_wrapper .table_container{
    display: inline-block;
-
 }
 
 .wrapper{
@@ -109,14 +108,14 @@ table th{
    margin-bottom: 3em;
 }
 
-.count_table{
-   margin-left: 0.5em;
-}
-
-.award_table{
+.right_side_table{
    margin-left: 2em;
 }
 
 .qualification{
    margin-top: 3em;
+}
+
+.col-auto{
+   margin-right: 1em;
 }

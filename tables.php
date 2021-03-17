@@ -44,7 +44,6 @@ include "fetch_moduledata.php";
         ?>
         
         <div class = "tables_wrapper">
-
             <div class="table_container">
                 <h4>Modules</h4>
                 <table>
@@ -66,7 +65,7 @@ include "fetch_moduledata.php";
                 </table>
             </div>
 
-            <div class="table_container count_table">
+            <div class="table_container right_side_table count_table">
                 <h5>Counts</h5>
                 <table>
                     <tr><th>A</th><th>B</th><th>C</th><th>F</th></tr>
@@ -119,7 +118,7 @@ include "fetch_moduledata.php";
                         }elseif($total_credit >= 120){
                             $qualification = 'PG Diploma in Computing';
                         }else{
-                            $qualification = 'not still given';
+                            $qualification = '';
                         }
                     ?>
                     <tr>
@@ -129,7 +128,7 @@ include "fetch_moduledata.php";
                 </table>
             </div>
 
-            <div class="table_container award_table">
+            <div class="table_container right_side_table award_table">
                 <h4>Award</h4>
                 <table>
                     <tr><th>Overall Award</th><th>Average Mark</th></tr>
@@ -166,7 +165,7 @@ include "fetch_moduledata.php";
 
         <?php
         } else {
-            echo '<p style="margin-top:2em;">Please input module information</p>';
+            echo '<p style="margin-top:2em;">no module is entered</p>';
         }
         ?>
     </body>
