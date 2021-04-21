@@ -20,31 +20,6 @@ if (isset($_POST['student_id']) && isset($_POST['password'])
 
 	$user_data = 'student_id='. $studentid. '&name='. $name;
 
-
-	if (empty($studentid)) {
-		header("Location: signup.php?error=Student ID is required&$user_data");
-	    exit();
-	}else if(empty($pass)){
-        header("Location: signup.php?error=Password is required&$user_data");
-	    exit();
-	}
-	else if(empty($re_pass)){
-        header("Location: signup.php?error=Re Password is required&$user_data");
-	    exit();
-	}
-
-	else if(empty($name)){
-        header("Location: signup.php?error=Name is required&$user_data");
-	    exit();
-	}
-
-	else if($pass !== $re_pass){
-        header("Location: signup.php?error=The confirmation password  does not match&$user_data");
-	    exit();
-	}
-
-	else{
-
 		// hashing the password
         $pass = md5($pass);
 
@@ -65,7 +40,6 @@ if (isset($_POST['student_id']) && isset($_POST['password'])
 		        exit();
            }
 		}
-	}
 	
 }else{
 	header("Location: signup.php");
