@@ -4,30 +4,24 @@ include "fetch_moduledata.php";
 
 <html>
     <body>
-        <?php if(isset($rows)){
-            $module_cds = [];
-            $module_names = [];
-            $credits = [];
-            $marks = [];
+        <?php if(count($module_cds)!=0){
             $grades = [];
-            foreach($rows as $row){
-                array_push($module_cds,$row['module_cd']);
-                array_push($module_names,$row['module_name']);
-                array_push($credits,$row['credit']);
-                array_push($marks,$row['mark']);
-                if($row['mark'] == 0){
+                
+            for($i=0; $i<count($marks); $i++){
+                if($marks[$i] == 0){
                     $grade = '';
-                } elseif($row['mark'] >= 70){
+                } elseif($marks[$i] >= 70){
                     $grade = 'A';
-                } elseif($row['mark'] >= 60){
+                } elseif($marks[$i] >= 60){
                     $grade = 'B';
-                } elseif($row['mark'] >= 50){
+                } elseif($marks[$i] >= 50){
                     $grade = 'C';
                 } else{
                     $grade = 'F';
                 }
                 array_push($grades, $grade);
             }
+
 
             // culculate total credits and mark 
             $total_credit = 0;
@@ -40,7 +34,7 @@ include "fetch_moduledata.php";
             }
 
             // culculate average mark
-            $avg_mark = $total_mark / count($rows);
+            $avg_mark = $total_mark / count($module_cds);
         ?>
         
         <div class = "tables_wrapper">
@@ -50,7 +44,7 @@ include "fetch_moduledata.php";
                     <tr><th>Module Code</th><th>Module Title</th><th>Credit</th><th>Mark</th><th>Grade</th></tr>
                     
                     <?php 
-                    for($i=0; $i<count($rows); $i++){
+                    for($i=0; $i<count($module_cds); $i++){
                     ?> 
                     <tr> 
                         <td><?php echo $module_cds[$i]; ?></td> 
@@ -161,7 +155,6 @@ include "fetch_moduledata.php";
                 </table>
             </div>
         </div>
-
 
         <?php
         } else {

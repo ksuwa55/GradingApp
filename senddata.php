@@ -14,19 +14,21 @@ if($_POST['submit']){
     $result = mysqli_query($conn, $check_exist);
 
     // Insert query
-    $insert = "INSERT INTO modules (module_cd, student_id, credit, mark) VALUES ('$module_cd', '$student_id',  '$credit', '$mark')";
+    $insert = "INSERT INTO modules (credit, mark, student_id, module_cd) VALUES (?, ?, ?, ?)";
 
     // Update query
-    $update = "UPDATE modules SET credit = '$credit', mark = '$mark' WHERE student_id = '$student_id' and module_cd = '$module_cd'";
+    $update = "UPDATE modules SET credit = ?, mark = ? WHERE student_id = ? and module_cd = ?";
+
 
     // If statement
     if(mysqli_num_rows($result) == 0){
-        mysqli_query($conn, $insert);
-        echo "Records added successfully.";
+        $stml = mysqli_prepare($conn, $insert);
     } else {
-        mysqli_query($conn,$update);
-        echo "Record updated correctly";
+        $stml = mysqli_prepare($conn,$update);
     }
+
+    mysqli_stmt_bind_param($stml, "iiis", $credit, $mark, $student_id, $module_cd);
+    mysqli_stmt_execute($stml);
 
     $uri = $_SERVER['HTTP_REFERER'];
     header("Location: ".$uri, true, 303);
