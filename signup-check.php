@@ -26,6 +26,7 @@ if (isset($_POST['student_id']) && isset($_POST['password'])
 	    $sql = "SELECT * FROM users WHERE student_id='$studentid' ";
 		$result = mysqli_query($conn, $sql);
 
+		// the query to register a user
 		if (mysqli_num_rows($result) > 0) {
 			header("Location: signup.php?error=The username is taken try another&$user_data");
 	        exit();

@@ -5,8 +5,9 @@ include "fetch_moduledata.php";
 <html>
     <body>
         <?php if(count($module_cds)!=0){
+            
+            // calcurate grades from marks
             $grades = [];
-                
             for($i=0; $i<count($marks); $i++){
                 if($marks[$i] == 0){
                     $grade = '';
@@ -21,7 +22,6 @@ include "fetch_moduledata.php";
                 }
                 array_push($grades, $grade);
             }
-
 
             // culculate total credits and mark 
             $total_credit = 0;
@@ -38,6 +38,7 @@ include "fetch_moduledata.php";
         ?>
         
         <div class = "tables_wrapper">
+            <!-- module tabel -->
             <div class="table_container">
                 <h4>Modules</h4>
                 <table>
@@ -59,6 +60,7 @@ include "fetch_moduledata.php";
                 </table>
             </div>
 
+            <!-- count table -->
             <div class="table_container right_side_table count_table">
                 <h5>Counts</h5>
                 <table>
@@ -102,6 +104,7 @@ include "fetch_moduledata.php";
         </div>
         
         <div class = "tables_wrapper">
+            <!-- qualification and total credit table -->                
             <div class="table_container"> 
                 <h4>Qualification</h4>
                 <table>
@@ -122,6 +125,7 @@ include "fetch_moduledata.php";
                 </table>
             </div>
 
+            <!-- award and avarage mark table -->                
             <div class="table_container right_side_table award_table">
                 <h4>Award</h4>
                 <table>

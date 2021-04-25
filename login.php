@@ -18,9 +18,9 @@ if (isset($_POST['student_id']) && isset($_POST['password'])) {
 	$pass = md5($pass);
 
 	$sql = "SELECT * FROM users WHERE student_id='$student_id' AND password='$pass'";
-
 	$result = mysqli_query($conn, $sql);
 
+	// check whether an account exists
 	if (mysqli_num_rows($result) === 1) {
 		$row = mysqli_fetch_assoc($result);
 		if ($row['student_id'] === $student_id && $row['password'] === $pass) {

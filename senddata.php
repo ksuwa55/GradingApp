@@ -20,16 +20,18 @@ if($_POST['submit']){
     $update = "UPDATE modules SET credit = ?, mark = ? WHERE student_id = ? and module_cd = ?";
 
 
-    // If statement
     if(mysqli_num_rows($result) == 0){
-        $stml = mysqli_prepare($conn, $insert);
+        $stml = mysqli_prepare($conn, $insert);  // if the record exists, the data will be inserted to database
+
     } else {
-        $stml = mysqli_prepare($conn,$update);
+        $stml = mysqli_prepare($conn,$update);   // if the record does not exist, the data will be updated
     }
 
+    // bind values to each variables
     mysqli_stmt_bind_param($stml, "iiis", $credit, $mark, $student_id, $module_cd);
     mysqli_stmt_execute($stml);
 
+    // back to the home page
     $uri = $_SERVER['HTTP_REFERER'];
     header("Location: ".$uri, true, 303);
     }
