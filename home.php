@@ -38,7 +38,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['student_id'])) {
 <body>
     <div class="container">
         <nav class="navbar" style="background:linear-gradient(#829ebc,#225588);">
-            <h1>Hello, <?php echo $_SESSION['name']; ?></h1>
+            <h1>Hello!!!, <?php echo $_SESSION['name']; ?></h1>
             <a href="logout.php"><button type="button" class="btn btn-success" >Logout</button></a>
         </nav>
     </div>
