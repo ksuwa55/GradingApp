@@ -26,15 +26,17 @@ include "fetch_moduledata.php";
             // culculate total credits and mark 
             $total_credit = 0;
             $total_mark = 0;
+            $all_credit = 0;
             for($i=0; $i<count($marks);$i++){
                 if($marks[$i] > 49){
                     $total_credit += $credits[$i];
                 }
-                $total_mark += $marks[$i];
+                $all_credit += $credits[$i]; // for culcultion of avg_mark (include failed module)
+                $total_mark += $marks[$i] * $credits[$i]; 
             }
 
             // culculate average mark
-            $avg_mark = $total_mark / count($module_cds);
+            $avg_mark = $total_mark / $all_credit
         ?>
         
         <div class = "tables_wrapper">
