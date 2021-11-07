@@ -11,13 +11,13 @@ include "fetch_moduledata.php";
             for($i=0; $i<count($marks); $i++){
                 if($marks[$i] == 0){
                     $grade = '';
-                } elseif($marks[$i] >= 70){
+                }elseif($marks[$i] >= 70){
                     $grade = 'A';
-                } elseif($marks[$i] >= 60){
+                }elseif($marks[$i] >= 60){
                     $grade = 'B';
-                } elseif($marks[$i] >= 50){
+                }elseif($marks[$i] >= 50){
                     $grade = 'C';
-                } else{
+                }else{
                     $grade = 'F';
                 }
                 array_push($grades, $grade);
@@ -141,16 +141,16 @@ include "fetch_moduledata.php";
 
                         if($total_mark==0){
                             $total_grade = '';
-                        } elseif($avg_mark >= 70 && $marks[$index] >= 68){
+                        }elseif($avg_mark >= 70 && $marks[$index] >= 68){
                             $total_grade = 'Distinction';
-                        } elseif($avg_mark >= 60 && $marks[$index] >= 58){
+                        }elseif($avg_mark >= 60 && $marks[$index] >= 58){
                             $total_grade = 'Merit';
-                        } elseif($avg_mark >= 50){
+                        }elseif($avg_mark >= 50){
                             $total_grade = '';
-                        } else{
+                        }else{
                             $total_grade = '';
                         }
-                    } else {
+                    }else{
                         $total_grade = '';
                     }
                     ?>
@@ -163,7 +163,7 @@ include "fetch_moduledata.php";
         </div>
 
         <?php
-        } else {
+        }else{
             echo '<p style="margin-top:2em;">no module is entered</p>';
         }
         ?>

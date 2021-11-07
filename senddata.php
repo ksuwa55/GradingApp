@@ -22,7 +22,6 @@ if($_POST['submit']){
 
     if(mysqli_num_rows($result) == 0){
         $stml = mysqli_prepare($conn, $insert);  // if the record exists, the data will be inserted to database
-
     } else {
         $stml = mysqli_prepare($conn,$update);   // if the record does not exist, the data will be updated
     }

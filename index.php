@@ -15,7 +15,7 @@
 				alert( "Please enter your password");
 				return false;
 			}
-			return( true );
+			return(true);
 			}
 	</script>
 </head>
