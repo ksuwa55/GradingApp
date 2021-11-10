@@ -44,7 +44,7 @@ include "fetch_moduledata.php";
             <div class="table_container">
                 <h4>Modules</h4>
                 <table>
-                    <tr><th>Module Code</th><th>Module Title</th><th>Credit</th><th>Mark</th><th>Grade</th></tr>
+                    <tr><th>Module Code</th><th>Module Title</th><th>Credit</th><th>Mark</th><th>Grade</th><th></th></tr>
                     
                     <?php 
                     for($i=0; $i<count($module_cds); $i++){
@@ -55,6 +55,11 @@ include "fetch_moduledata.php";
                         <td><?php echo $credits[$i]; ?></td> 
                         <td><?php echo $marks[$i]; ?></td> 
                         <td><?php echo $grades[$i]; ?></td> 
+                        <td>
+                            <button type="submit" class="btn btn-danger btn-sm">
+                            <i class="fa fa-trash"></i> 
+                            </button>  
+                        </td>
                     </tr> 
                     <?php 
                     } 
