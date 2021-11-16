@@ -56,9 +56,9 @@ include "fetch_moduledata.php";
                         <td><?php echo $marks[$i]; ?></td> 
                         <td><?php echo $grades[$i]; ?></td> 
                         <td>
-                            <button type="submit" class="btn btn-danger btn-sm">
-                            <i class="fa fa-trash"></i> 
-                            </button>  
+                            <a href="deletedata.php?module_cd=<?php echo $module_cds[$i];?>" type="submit" class="btn btn-danger btn-sm">
+                                <i class="fa fa-trash"></i> 
+                            </a>  
                         </td>
                     </tr> 
                     <?php 
