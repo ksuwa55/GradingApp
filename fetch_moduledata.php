@@ -4,8 +4,8 @@ include "db_conn.php";
 $student_id = $_SESSION['student_id'];
 
 // fetch value
-$sql = "SELECT  ms.module_cd, mn.module_name, ms.credit, ms.mark FROM modules ms 
-INNER JOIN module_names mn ON ms.module_cd = mn.module_cd WHERE ms.student_id = ?" ;
+$sql = "SELECT  ms.module_cd, mn.module_info, ms.credit, ms.mark FROM modules ms 
+INNER JOIN module_info mn ON ms.module_cd = mn.module_cd WHERE ms.student_id = ?" ;
 
 // prepare statement
 $stmt = mysqli_prepare($conn, $sql);
