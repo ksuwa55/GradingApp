@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if (isset($_SESSION['id']) && isset($_SESSION['student_id'])) {
+if (isset($_SESSION['id']) && isset($_SESSION['student_id']) && isset($_SESSION['admin'])) {
 
  ?>
 <!DOCTYPE html>
@@ -41,6 +41,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['student_id'])) {
     <div class="container">
         <nav class="navbar" style="background:linear-gradient(#829ebc,#225588);">
             <h1>Hello, <?php echo $_SESSION['name']; ?></h1>
+            <?php
+                if($_SESSION['admin']==1){
+                    echo '<a href="admin.php"><button type="button" class="btn btn-danger" >Admin</button></a>'; 
+                }
+            ?>
             <a href="logout.php"><button type="button" class="btn btn-success" >Logout</button></a>
         </nav>
     </div>

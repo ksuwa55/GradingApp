@@ -27,6 +27,7 @@ if (isset($_POST['student_id']) && isset($_POST['password'])) {
 			$_SESSION['student_id'] = $row['student_id'];
 			$_SESSION['name'] = $row['name'];
 			$_SESSION['id'] = $row['id'];
+			$_SESSION['admin'] = $row['admin'];
 			header("Location: home.php");
 			exit();
 		}else{
