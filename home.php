@@ -3,6 +3,10 @@ session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['student_id']) && isset($_SESSION['admin'])) {
 
  ?>
+
+<?php
+include "read_modulecode.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,14 +63,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['student_id']) && isset($_SESSION[
                 Module Code: <br>  
                 <select name="module_cd">
                     <option></option>
-                    <option>COMP7001</option>
-                    <option>COMP7002</option>
-                    <option>TECH7005</option>
-                    <option>DALT7002</option>
-                    <option>DALT7011</option>
-                    <option>SOFT7003</option>
-                    <option>TECH7004</option>
-                    <option>TECH7009</option>
+                    <?php 
+                        foreach($all_module_cds as $module_cd){
+                            echo "<option> $module_cd </option>";
+                        }
+                    ?>
                 </select>
             </div>
 

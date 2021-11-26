@@ -1,5 +1,5 @@
 <?php
-include "fetch_moduledata.php";
+include "read_modules.php";
 ?>
 
 <html>

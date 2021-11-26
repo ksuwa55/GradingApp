@@ -29,6 +29,5 @@ while(mysqli_stmt_fetch($stmt)){
 	array_push($credits, $credit);
 	array_push($marks, $mark);
 }
-
 ?>
 
