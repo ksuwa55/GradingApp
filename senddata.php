@@ -14,10 +14,10 @@ if($_POST['submit']){
     $result = mysqli_query($conn, $check_exist);
 
     // Insert query
-    $insert = "INSERT INTO modules (credit, mark, student_id, module_cd) VALUES (?, ?, ?, ?)";
+    $insert = "INSERT INTO modules (mark, student_id, module_cd) VALUES (?, ?, ?)";
 
     // Update query
-    $update = "UPDATE modules SET credit = ?, mark = ? WHERE student_id = ? and module_cd = ?";
+    $update = "UPDATE modules SET mark = ? WHERE student_id = ? and module_cd = ?";
 
 
     if(mysqli_num_rows($result) == 0){
@@ -27,7 +27,7 @@ if($_POST['submit']){
     }
 
     // bind values to each variables
-    mysqli_stmt_bind_param($stml, "iiis", $credit, $mark, $student_id, $module_cd);
+    mysqli_stmt_bind_param($stml, "iis", $mark, $student_id, $module_cd);
     mysqli_stmt_execute($stml);
 
     // back to the home page

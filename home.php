@@ -71,11 +71,6 @@ include "read_modulecode.php";
                 </select>
             </div>
 
-            <!-- input credit -->
-            <div class="col-auto">
-                Credit: <br> <input type="number" name="credit" >
-            </div>
-
             <!-- input mark -->
             <div class="col-auto">
                 Mark: <br> <input type="number" name="mark" >
