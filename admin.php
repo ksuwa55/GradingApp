@@ -70,6 +70,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['student_id'])) {
                 <input type="submit" name="submit" value="Submit" class="btn btn-success btn-sm" onclick="rset(this.form)">   
             </div>
         </form>
+
+        <div class="active-user">
+            <h3>Number of active user</h3>
+            <ul class="user-list">
+                <li><a href="#">test</a></li>
+                <li><a href="#">test</a></li>
+            </ul>
+        </div>
     </div>
 </body>
 

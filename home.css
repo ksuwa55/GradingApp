@@ -121,3 +121,17 @@ table th{
 .col-auto{
    margin-right: 1em;
 }
+
+/* admin */
+.active-user{
+   margin-top: 3em;
+}
+.user-list{
+   border: solid 1px;
+   background-color: white;
+}
+
+ul li{
+   list-style-type: none;
+   margin-bottom: 0.5em;
+}
