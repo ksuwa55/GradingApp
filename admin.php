@@ -3,6 +3,11 @@ session_start();
 if (isset($_SESSION['id']) && isset($_SESSION['student_id'])) {
 
  ?>
+
+<?php
+include "read_users.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,10 +77,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['student_id'])) {
         </form>
 
         <div class="active-user">
-            <h3>Number of active user</h3>
+            <h3><?php echo count($all_user_names) ?> <?php echo "active user"  ?></h3>
             <ul class="user-list">
-                <li><a href="#">test</a></li>
-                <li><a href="#">test</a></li>
+                <?php 
+                    foreach($all_user_names as $user_name){
+                        ?>
+                        <li><a href="#"><?php echo $user_name ?></a></li>
+                        <?php
+                    }
+                ?>  
             </ul>
         </div>
     </div>
